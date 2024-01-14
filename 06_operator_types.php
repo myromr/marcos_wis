@@ -12,7 +12,7 @@
         $num3 = 3;
         $num4 = 5;
 
-        $add = $num1 + num2;
+        $add = $num1 + $num2;
         $subtr = $num2 - $num1;
         $mult = $num1 * $num3;
         $div = $num2 / $num3;

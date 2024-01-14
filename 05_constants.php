@@ -32,7 +32,7 @@
             */
 
             //using for
-            for($x = 0; $x < 4; $X++){
+            for($x = 0; $x < 4; $x++){
                 print SENTENCE[$x];
                 print " ";
                 if($x == 3)
