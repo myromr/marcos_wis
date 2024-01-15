@@ -1,0 +1,66 @@
+cd..
+cd..
+cd mysql/bin
+.\mysql -u root
+
+CREATE DATABASE StudentRecord;
+
+USE StudentRecord;
+
+CREATE TABLE Student (
+    StudentID int NOT NULL AUTO_INCREMENT,
+    FirstName varchar(255),
+    LastNAme varchar(255),
+    DateOfBirth date,
+    Email varchar(255),
+    Phone varchar(255),
+    PRIMARY KEY (StudentID)
+);
+
+CREATE TABLE Course (
+    CourseID int NOT NULL AUTO_INCREMENT,
+    CourseName varchar(255),
+    Credit int,
+    PRIMARY KEY (COurseID)
+);
+
+CREATE TABLE Instructor (
+    InstructorID int NOT NULL AUTO_INCEMENT,
+    FirstName varchar(255),
+    LastName varchar(255),
+    Email varchar(255),
+    Phone varchar(255),
+    PRIMARY KEY (InstructorID)
+);
+
+CREATE TABLE Enrollment (
+    EnrollmentID int NOT NULL AUTO_INCREMENT,
+    StudentID int,
+    CourseID int,
+    EnrollmentDate date,
+    Grade int,
+    PRIMARY KEY (EnrollmentID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (CourseID) REFERENCES Course(CourseID)
+);
+
+
+INSERT INTO student (FirstName, LastName, DateOfBirth, Email, Phone)
+VALUES ("Yew", "Wey", "2001-09-08", "ywe@email.com", "09245826142"), 
+("Ure", "Mew", "2021-01-21", "mew@email.com", "09245826987"),
+("Mano", "Wer", "1999-05-08", "mple2email.com", "0924653956");
+
+INSERT INTO course (CourseName, Credits)
+VALUES ("Test Course", 80),
+("WIS", 80),
+("Racing Course", 80);
+
+INSERT INTO instructor (FirstName, LastName, Email, Phone)
+VALUES ("TestInst", "LastName", "email@email.com", "09123456789"),
+("Tam", "Lem", "lem@email.com", "09123456780"),
+("Instlo", "Holo", "email@email.com", "09123456788")
+
+INSERT INTO Enrollment (StudentID, CourseID, EnrollmentDate, Grade)
+VALUES (1, 1, "2023-11-21", 75),
+(2, 2, "2023-11-21", 85),
+(3, 2, "2023-11-21", 95);
