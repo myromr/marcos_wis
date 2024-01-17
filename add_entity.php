@@ -8,6 +8,13 @@
     <title>Edited Table</title>
 </head>
 <body>
-    
+    <?php
+        $servername = "";
+        $username = "";
+        $passqord = "";
+        $dbname = "";
+
+        $conn = new mysql()
+    ?>
 </body>
 </html>
