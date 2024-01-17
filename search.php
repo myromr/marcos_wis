@@ -45,7 +45,7 @@
 
                 $conditionsStudent = [];
                 foreach ($columnsStudent as $column) {
-                    $conditionsStudent[] = "column LIKE '%$searchTerm%'";
+                    $conditionsStudent[] = "$column LIKE '%$searchTerm%'";
                 }
 
                 $sqlStudent .= implode(" OR ", $conditionsStudent);
@@ -70,41 +70,35 @@
 
     <!-- Course -->
     <div class="container mb-5 mt-5">
-        <h2>Table: Student</h2>
+        <h2>Table: Course</h2>
         <table class="table table-striped">
             <tr>
-                <td>Student ID</td>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Date of Birth</td>
-                <td>Email</td>
-                <td>Phone</td>
+                <td>Course ID</td>
+                <td>Course Name</td>
+                <td>Credits</td>
             </tr>
 
             <?php
-                $sqlStudent = "SELECT * FROM Student WHERE ";
-                $columnStudent = ['StudentID', 'FirstName', 'LastName', 'DateOfBirth', 'Email', 'Phone'];
+                $sqlCourse = "SELECT * FROM Course WHERE ";
+                $columnCourse = ['CourseID', 'CourseName', 'Credits'];
 
-                $conditionsStudent = [];
-                foreach ($columnsStudent as $column) {
-                    $conditionsStudent[] = "column LIKE '%$searchTerm%'";
+                $conditionsCourse = [];
+                foreach ($columnsCourse as $column) {
+                    $conditionsCourse[] = "$column LIKE '%$searchTerm%'";
                 }
 
-                $sqlStudent .= implode(" OR ", $conditionsStudent);
+                $sqlCourse .= implode(" OR ", $conditionsCourse);
 
-                $resultStudents = $conn->query($sqlStudent);
+                $resultCourse = $conn->query($sqlCourse);
 
-                if ($resultStudent->num_rows > 0) {
-                    while ($row = $resultStudent->fetch_assoc()) {
-                        echo "<tr><td>" .row["StudentID"]. "</td>";
-                        echo "<td>" .$row["FirstName"]. "</td>";
-                        echo "<td>" .$row["LastName"]. "</td>";
-                        echo "<td>" .$row["DateOfBirth"]. "</td>";
-                        echo "<td>" .$row["Email"]. "</td>";
-                        echo "<td>" .$row["Phone"]. "</td></tr>";
+                if ($resultCourse->num_rows > 0) {
+                    while ($row = $resultCourse->fetch_assoc()) {
+                        echo "<tr><td>" .row["CourseID"]. "</td>";
+                        echo "<td>" .$row["CourseName"]. "</td>";
+                        echo "<td>" .$row["Credits"]. "</td></tr>";
                     }
                 } else {
-                    echo "0 results from Student";
+                    echo "0 results from Course";
                 }
             ?>
         </table>
@@ -112,41 +106,39 @@
 
     <!-- Instructor -->
     <div class="container mb-5 mt-5">
-        <h2>Table: Student</h2>
+        <h2>Table: Instructor</h2>
         <table class="table table-striped">
             <tr>
-                <td>Student ID</td>
+                <td>Instructor ID</td>
                 <td>First Name</td>
                 <td>Last Name</td>
-                <td>Date of Birth</td>
                 <td>Email</td>
                 <td>Phone</td>
             </tr>
 
             <?php
-                $sqlStudent = "SELECT * FROM Student WHERE ";
-                $columnStudent = ['StudentID', 'FirstName', 'LastName', 'DateOfBirth', 'Email', 'Phone'];
+                $sqlStudent = "SELECT * FROM Instructor WHERE ";
+                $columnInstructor = ['InstructorID', 'FirstName', 'LastName', 'Email', 'Phone'];
 
-                $conditionsStudent = [];
-                foreach ($columnsStudent as $column) {
-                    $conditionsStudent[] = "column LIKE '%$searchTerm%'";
+                $conditionsInstructor = [];
+                foreach ($columnsInstructor as $column) {
+                    $conditionsIstructor[] = "$column LIKE '%$searchTerm%'";
                 }
 
-                $sqlStudent .= implode(" OR ", $conditionsStudent);
+                $sqlInstructor .= implode(" OR ", $conditionsInstructor);
 
-                $resultStudents = $conn->query($sqlStudent);
+                $resultInstructor = $conn->query($sqlInstructor);
 
-                if ($resultStudent->num_rows > 0) {
-                    while ($row = $resultStudent->fetch_assoc()) {
-                        echo "<tr><td>" .row["StudentID"]. "</td>";
+                if ($resultInstructor->num_rows > 0) {
+                    while ($row = $resultInstructor->fetch_assoc()) {
+                        echo "<tr><td>" .row["InstructorID"]. "</td>";
                         echo "<td>" .$row["FirstName"]. "</td>";
                         echo "<td>" .$row["LastName"]. "</td>";
-                        echo "<td>" .$row["DateOfBirth"]. "</td>";
                         echo "<td>" .$row["Email"]. "</td>";
                         echo "<td>" .$row["Phone"]. "</td></tr>";
                     }
                 } else {
-                    echo "0 results from Student";
+                    echo "0 results from Instructor";
                 }
             ?>
         </table>
@@ -154,41 +146,39 @@
 
     <!-- Enrollment-->
     <div class="container mb-5 mt-5">
-        <h2>Table: Student</h2>
+        <h2>Table: Enrollment</h2>
         <table class="table table-striped">
             <tr>
+                <td>Enrollment ID</td>
                 <td>Student ID</td>
-                <td>First Name</td>
-                <td>Last Name</td>
-                <td>Date of Birth</td>
-                <td>Email</td>
-                <td>Phone</td>
+                <td>Course ID</td>
+                <td>Enrollment Date</td>
+                <td>Grade</td>
             </tr>
 
             <?php
-                $sqlStudent = "SELECT * FROM Student WHERE ";
-                $columnStudent = ['StudentID', 'FirstName', 'LastName', 'DateOfBirth', 'Email', 'Phone'];
+                $sqlEnrollment = "SELECT * FROM Enrollment WHERE ";
+                $columnEnrollment = ['EnrollmentID', 'StudentID', 'CourseID', 'EnrollmentDate', 'Grade'];
 
-                $conditionsStudent = [];
-                foreach ($columnsStudent as $column) {
-                    $conditionsStudent[] = "column LIKE '%$searchTerm%'";
+                $conditionsEnrollment = [];
+                foreach ($columnsEnrollment as $column) {
+                    $conditionsEnrollment[] = "$column LIKE '%$searchTerm%'";
                 }
 
-                $sqlStudent .= implode(" OR ", $conditionsStudent);
+                $sqlEnrollment .= implode(" OR ", $conditionsEnrollment);
 
-                $resultStudents = $conn->query($sqlStudent);
+                $resultEnrollment = $conn->query($sqlEnrollment);
 
-                if ($resultStudent->num_rows > 0) {
-                    while ($row = $resultStudent->fetch_assoc()) {
-                        echo "<tr><td>" .row["StudentID"]. "</td>";
-                        echo "<td>" .$row["FirstName"]. "</td>";
-                        echo "<td>" .$row["LastName"]. "</td>";
-                        echo "<td>" .$row["DateOfBirth"]. "</td>";
-                        echo "<td>" .$row["Email"]. "</td>";
-                        echo "<td>" .$row["Phone"]. "</td></tr>";
+                if ($resultEnrollment->num_rows > 0) {
+                    while ($row = $resultEnrollment->fetch_assoc()) {
+                        echo "<tr><td>" .row["EnrollmentID"]. "</td>";
+                        echo "<td>" .$row["StudentID"]. "</td>";
+                        echo "<td>" .$row["CourseID"]. "</td>";
+                        echo "<td>" .$row["EnrollmentDate"]. "</td>";
+                        echo "<td>" .$row["Grade"]. "</td></tr>";
                     }
                 } else {
-                    echo "0 results from Student";
+                    echo "0 results from Enrollment";
                 }
             ?>
         </table>
