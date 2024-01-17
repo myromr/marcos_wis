@@ -37,53 +37,53 @@
         }
         
         // Delete Course
-        if(isset($_POST['student_delete'])) {
+        else if(isset($_POST['course_delete'])) {
             $id = $_POST['id'];
 
-            $sql = "DELETE FROM Student WHERE StudentID = $id";
+            $sql = "DELETE FROM Course WHERE CourseID = $id";
 
             try {
                 if ($conn->query($sql) === TRUE) {
-                    echo "Deleted Student";
+                    echo "Deleted Course";
                 } else {
                     echo "Error deleting entity: " . $conn->error;
                 }
             } catch (Exception $e){
-                echo "Cannot delete student. Student is connected with other tables.";
+                echo "Cannot delete course. Course is connected with other tables.";
             }
         }
 
         // Delete Instructor
-        if(isset($_POST['student_delete'])) {
+        else if(isset($_POST['instructor_delete'])) {
             $id = $_POST['id'];
 
-            $sql = "DELETE FROM Student WHERE StudentID = $id";
+            $sql = "DELETE FROM Instructor WHERE InstructorID = $id";
 
             try {
                 if ($conn->query($sql) === TRUE) {
-                    echo "Deleted Student";
+                    echo "Deleted Instructor";
                 } else {
                     echo "Error deleting entity: " . $conn->error;
                 }
             } catch (Exception $e){
-                echo "Cannot delete student. Student is connected with other tables.";
+                echo "Cannot delete instructor. Instructor is connected with other tables.";
             }
         }
 
         // Delete Enrollment
-        if(isset($_POST['student_delete'])) {
+        if(isset($_POST['enrollment_delete'])) {
             $id = $_POST['id'];
 
-            $sql = "DELETE FROM Student WHERE StudentID = $id";
+            $sql = "DELETE FROM Enrollment WHERE EnrollmentID = $id";
 
             try {
                 if ($conn->query($sql) === TRUE) {
-                    echo "Deleted Student";
+                    echo "Deleted Enrollment";
                 } else {
                     echo "Error deleting entity: " . $conn->error;
                 }
             } catch (Exception $e){
-                echo "Cannot delete student. Student is connected with other tables.";
+                echo "Cannot delete enrollment. Enrollment is connected with other tables.";
             }
         }
 
