@@ -38,55 +38,52 @@
         }
 
         // Add Course
-        if(isset($POST['student_add'])) {
-            $firstName = $_POST['first_name'];
-            $lastName = $_POST['last_name'];
-            $dateOfBirth = $_POST['date_of_birth'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
+        else if(isset($POST['course_add'])) {
+            $courseName = $_POST['course_name'];
+            $credits = $_POST['credits'];
 
-            $sql = "INSERT INTO Student (FirstName, LastName, DateOfBirth, Email, Phone) VALUES ('$firstName', '$lastName', '$dateOfBirth', '$email', '$phone')";
+            $sql = "INSERT INTO Course (CourseName, Credits) VALUES ('$courseName', '$credits')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Added Student";
+                echo "Added Course";
             } else {
                 echo "Error adding entity: " . $conn->error;
             }
         }
 
         // Add Instructor
-        if(isset($POST['student_add'])) {
+        else if(isset($POST['instructor_add'])) {
             $firstName = $_POST['first_name'];
             $lastName = $_POST['last_name'];
-            $dateOfBirth = $_POST['date_of_birth'];
             $email = $_POST['email'];
             $phone = $_POST['phone'];
 
-            $sql = "INSERT INTO Student (FirstName, LastName, DateOfBirth, Email, Phone) VALUES ('$firstName', '$lastName', '$dateOfBirth', '$email', '$phone')";
+            $sql = "INSERT INTO Instructor (FirstName, LastName, Email, Phone) VALUES ('$firstName', '$lastName', '$email', '$phone')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Added Student";
+                echo "Added Instructor";
             } else {
                 echo "Error adding entity: " . $conn->error;
             }
         }
 
         // Add Enrollment
-        if(isset($POST['student_add'])) {
-            $firstName = $_POST['first_name'];
-            $lastName = $_POST['last_name'];
-            $dateOfBirth = $_POST['date_of_birth'];
-            $email = $_POST['email'];
-            $phone = $_POST['phone'];
+        else if(isset($POST['enrollment_add'])) {
+            $studentId = $_POST['student_id'];
+            $courseId = $_POST['course_id'];
+            $enrollmentDate = $_POST['enrollment_date'];
+            $grade = $_POST['grade'];
 
-            $sql = "INSERT INTO Student (FirstName, LastName, DateOfBirth, Email, Phone) VALUES ('$firstName', '$lastName', '$dateOfBirth', '$email', '$phone')";
+            $sql = "INSERT INTO Enrollment (StudentID, LCourseID, EnrollmentDate, Grade) VALUES ('$studentId', '$courseId', '$enrollmentDate', '$grade')";
 
             if ($conn->query($sql) === TRUE) {
-                echo "Added Student";
+                echo "Added Enrollment";
             } else {
                 echo "Error adding entity: " . $conn->error;
             }
         }
+
+        $conn->close();
     ?>
 </body>
 </html>
