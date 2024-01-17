@@ -79,10 +79,140 @@
 
             <form id="StudentFormUpdate" method="post" action="update_entity.php" style="display: none;">
                 <h4>Update Student</h4>
-                <input type="text" name="">
+                <input type="text" name="id" placeholder="Student ID" required>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="date" name="date_of_birth" placeholder="Date of Birth">
+                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="phone" placeholder="Phone">
+                <input type="submit" name="student_update" value="Update Student">
+            </form>
+
+            <form id="StudentFormDelete" method="post" action="delete_entity.php" style="display: none;">
+                <h4>Delete Student</h4>
+                <input type="text" name="id" placeholder="Student ID" required>
+                <input type="submit" name="student_delete" value="Delete Student">
             </form>
         </div>
-
     </div>
+
+    <!-- Course Table -->
+
+    <div class="container mb-5 mt-5">
+        <h2>Table: Course</h2>
+        <table class="table table-stripped">
+            <tr>
+                <td>Course Id</td>
+                <td>Course Name</td>
+                <td>Credit</td>
+            </tr>
+
+            <?php
+                echo "<br>";
+                $sqlCourse = "SELECT * FROM Course";
+                $resultCourse = $conn->query($sqlCourse);
+
+                if ($resultCourse){
+                    while($row = $resultCourse->fetch_assoc()) {
+                        echo "<tr><td>" .$row["CourseID"]. "</td>";
+                        echo "<td>" .$row["CourseName"]. "</td>";
+                        echo "<td>" .$row["Credits"]. "</td></tr>";
+                    }
+                }
+                else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+            ?>
+        </table>
+
+        <button onclick="toggleFormCourseCreate()">Add</button>
+        <button onclick="toggleFormCourseUpdate()">Update</button>
+        <button onclick="toggleFormCourseDelete()">Delete</button>
+
+        <div class="mt-3">
+            <form id="CourseFormCreate" method="post" action="add_entity.php" style="display: none;">
+                <h4>Add Course</h4>
+                <input type="text" name="course_name" placeholder="Course Name">
+                <input type="text" name="credits" placeholder="Credits">
+                <input type="submit" name="course_add" value="Add Course">
+            </form>
+
+            <form id="CourseFormUpdate" method="post" action="update_entity.php" style="display: none;">
+                <h4>Update Course</h4>
+                <input type="text" name="id" placeholder="Course ID" required>
+                <input type="text" name="course_name" placeholder="Course Name">
+                <input type="text" name="credits" placeholder="Credits">
+                <input type="submit" name="course_update" value="Update Course">
+            </form>
+
+            <form id="CourseFormDelete" method="post" action="delete_entity.php" style="display: none;">
+                <h4>Delete Course</h4>
+                <input type="text" name="id" placeholder="Course ID" required>
+                <input type="submit" name="course_delete" value="Delete Course">
+            </form>
+        </div>
+    </div>
+
+    <!-- Instructor Table -->
+
+    <div class="container mb-5 mt-5">
+        <h2>Table: Instructor</h2>
+        <table class="table table-stripped">
+            <tr>
+                <td>Instructor ID</td>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>Email</td>
+                <td>Phone</td>
+            </tr>
+
+            <?php
+                echo "<br>";
+                $sqlInst = "SELECT * FROM Instructor";
+                $resultInst = $conn->query($sqlInst);
+
+                if ($resultInst){
+                    while($row = $resultInst->fetch_assoc()) {
+                        echo "<tr><td>" .$row["InstructorID"]. "</td>";
+                        echo "<td>" .$row["FirstName"]. "</td>";
+                        echo "<td>" .$row["LastName"]. "</td>";
+                        echo "<td>" .$row["Email"]. "</td>";
+                        echo "<td>" .$row["Phone"]. "</td></tr>";
+                    }
+                }
+                else {
+                    echo "Error: " . $sql . "<br>" . $conn->error;
+                }
+            ?>
+        </table>
+
+        <button onclick="toggleFormInstructorCreate()">Add</button>
+        <button onclick="toggleFormInstructorUpdate()">Update</button>
+        <button onclick="toggleFormInstructorDelete()">Delete</button>
+
+        <div class="mt-3">
+            <form id="InstructorFormCreate" method="post" action="add_entity.php" style="display: none;">
+                <h4>Add Instructor</h4>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="Phone" placeholder="Phone">
+                <input type="submit" name="instructor_add" value="Add Instructor">
+            </form>
+            
+            <form id="InstructorFormUpdate" method="post" action="update_entity.php" style="display: none;">
+                <h4>Update Instructor</h4>
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="last_name" placeholder="Last Name">
+                <input type="text" name="email" placeholder="Email">
+                <input type="text" name="Phone" placeholder="Phone">
+                <input type="submit" name="instructor_add" value="Add Instructor">
+            </form>
+
+            
+        </div>
+    </div>
+
+
 </body>
 </html>
