@@ -91,16 +91,16 @@
 
     <form method="post" action="activity3.php">
         <h4>UPDATE</h4>
+        <input type="text" name="id" placeholder="ID" required>
         <input type="text" name="username" placeholder="Username">
         <input type="text" name="email" placeholder="Email">
-        <input type="submit" name="create" value="Create">
+        <input type="submit" name="update" value="Update">
     </form>
 
     <form method="post" action="activity3.php">
         <h4>DELETE</h4>
-        <input type="text" name="username" placeholder="Username">
-        <input type="text" name="email" placeholder="Email">
-        <input type="submit" name="create" value="Create">
+        <input type="text" name="id" placeholder="ID">
+        <input type="submit" name="delete" value="Delete">
     </form>
 </body>
 </html>
