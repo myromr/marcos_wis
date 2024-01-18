@@ -37,4 +37,162 @@ function toggleFormUsersDelete() {
         form.style.display = "none";
     }
 }
+// Student
+function toggleFormUsersCreate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
 
+function toggleFormUsersUpdate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersDelete() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+// Course
+function toggleFormUsersCreate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersUpdate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersDelete() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+// Instructor
+function toggleFormUsersCreate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersUpdate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersDelete() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+// Enrollment
+function toggleFormUsersCreate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersUpdate() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
+
+function toggleFormUsersDelete() {
+    var form = document.getElementById("UsersFormCreate");
+    var form1 = document.getElementById("UsersFormUpdate");
+    var form2 = document.getElementById("UsersFormDelete");
+    if (form.style.display === "none") {
+        form.style.display = "block";
+        form1.style.display = "none";
+        form2.style.display = "none";
+    } else {
+        form.style.display = "none";
+    }
+}
