@@ -34,39 +34,44 @@
             Username varchar(255),
             Email varchar(255),
             Passwd varchar(255),
-            PRIMARY KEY (UserID),
+            PRIMARY KEY (UserID)
             )";
 
-        $create_users = "CREATE TABLE IF NOT EXISTS Users (
-            UserID int NOT NULL AUTO_INCREMENT,
-            Username varchar(255),
+        $create_student = "CREATE TABLE IF NOT EXISTS Student (
+            StudentID int NOT NULL AUTO_INCREMENT,
+            FirstName varchar(255),
+            LastName varchar(255),
+            DateOfBirth date,
             Email varchar(255),
-            Passwd varchar(255),
-            PRIMARY KEY (UserID),
+            Phone varchar(255),
+            PRIMARY KEY (StudentID)
             )";
 
-        $create_users = "CREATE TABLE IF NOT EXISTS Users (
-            UserID int NOT NULL AUTO_INCREMENT,
-            Username varchar(255),
-            Email varchar(255),
-            Passwd varchar(255),
-            PRIMARY KEY (UserID),
+        $create_course = "CREATE TABLE IF NOT EXISTS Course (
+            CourseID int NOT NULL AUTO_INCREMENT,
+            CourseName varchar(255),
+            Credits int,
+            PRIMARY KEY (CourseID)
             )";
 
-        $create_users = "CREATE TABLE IF NOT EXISTS Users (
-            UserID int NOT NULL AUTO_INCREMENT,
-            Username varchar(255),
+        $create_instructor = "CREATE TABLE IF NOT EXISTS Instructor (
+            InstructorID int NOT NULL AUTO_INCREMENT,
+            FirstName varchar(255),
+            LastName varchar(255),
             Email varchar(255),
-            Passwd varchar(255),
-            PRIMARY KEY (UserID),
+            Phone varchar(255),
+            PRIMARY KEY (InstructorID)
             )";
 
-        $create_users = "CREATE TABLE IF NOT EXISTS Users (
-            UserID int NOT NULL AUTO_INCREMENT,
-            Username varchar(255),
-            Email varchar(255),
-            Passwd varchar(255),
-            PRIMARY KEY (UserID),
+        $create_enrollment = "CREATE TABLE IF NOT EXISTS Enrollment (
+            EnrollmentID int NOT NULL AUTO_INCREMENT,
+            StudentID int,
+            CourseID int,
+            EnrollmentDate date,
+            Grade int,
+            PRIMARY KEY (EnrollmentID),
+            FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+            FOREIGN KEY (CoureID) REFERENCES Course(CourseID)
             )";
 
         $conn->query($create_users);
