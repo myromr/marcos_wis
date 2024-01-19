@@ -153,110 +153,132 @@
                     $edited = 1;
                 }
 
-                if ($passwd != null){
-                    $sql = "UPDATE Users SET Passwd='$passwd' WHERE UserID=$id";
+                if ($dateOfBirth != null){
+                    $sql = "UPDATE Student SET DateOfBirth='$dateOfBirth' WHERE StudentID=$id";
+                    $conn->query($sql);
+                    $edited = 1;
+                }
+
+                if ($email != null){
+                    $sql = "UPDATE Student SET Email='$email' WHERE StudentID=$id";
+                    $conn->query($sql);
+                    $edited = 1;
+                }
+
+                if ($phone != null){
+                    $sql = "UPDATE Student SET Phone='$phone' WHERE StudentID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
                 if ($edited === 1){
-                    echo "Updated User ID = $id";
+                    echo "Updated Student ID = $id";
                 } else {
                     echo "Error updating entity: " . $conn->error;
                 }
             }
+
             // Update Course
-            else if(isset($_POST['users_update'])) {
+            else if(isset($_POST['course_update'])) {
                 $id = $_POST['id'];
-                $username = $_POST['users_update'];
-                $email = $_POST['email'];
-                $passwd = $_POST['passwd'];
+                $courseName = $_POST['course_name'];
+                $credits = $_POST['credits'];
                 $edited = 0;
 
-                if ($username != null){
-                    $sql = "UPDATE Users SET Username='$username' WHERE UserID=$id";
+                if ($courseName != null){
+                    $sql = "UPDATE Course SET CourseName='$courseName' WHERE CourseID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
-                if ($email != null){
-                    $sql = "UPDATE Users SET Email='$email' WHERE UserID=$id";
-                    $conn->query($sql);
-                    $edited = 1;
-                }
-
-                if ($passwd != null){
-                    $sql = "UPDATE Users SET Passwd='$passwd' WHERE UserID=$id";
+                if ($credits != null){
+                    $sql = "UPDATE Course SET Credits='$credits' WHERE CourseID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
                 if ($edited === 1){
-                    echo "Updated User ID = $id";
+                    echo "Updated Course ID = $id";
                 } else {
                     echo "Error updating entity: " . $conn->error;
                 }
             }
+
             // Update Instructor
-            else if(isset($_POST['users_update'])) {
+            else if(isset($_POST['instructor_update'])) {
                 $id = $_POST['id'];
-                $username = $_POST['users_update'];
+                $firstName = $_POST['first_name'];
+                $LastName = $_POST['last_name'];
                 $email = $_POST['email'];
-                $passwd = $_POST['passwd'];
+                $phone = $_POST['phone'];
                 $edited = 0;
 
-                if ($username != null){
-                    $sql = "UPDATE Users SET Username='$username' WHERE UserID=$id";
+                if ($firstName != null){
+                    $sql = "UPDATE Instructor SET FirstName='$firstName' WHERE InstructorID=$id";
+                    $conn->query($sql);
+                    $edited = 1;
+                }
+
+                if ($lastName != null){
+                    $sql = "UPDATE Ins SET LastName='$lastName' WHERE InstructorID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
                 if ($email != null){
-                    $sql = "UPDATE Users SET Email='$email' WHERE UserID=$id";
+                    $sql = "UPDATE Instructor SET Email='$email' WHERE InstructorID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
-                if ($passwd != null){
-                    $sql = "UPDATE Users SET Passwd='$passwd' WHERE UserID=$id";
+                if ($phone != null){
+                    $sql = "UPDATE Instructor SET Phone='$phone' WHERE InstructorID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
                 if ($edited === 1){
-                    echo "Updated User ID = $id";
+                    echo "Updated Instructor ID = $id";
                 } else {
                     echo "Error updating entity: " . $conn->error;
                 }
             }
+
             // Update Enrollment
-            else if(isset($_POST['users_update'])) {
+            else if(isset($_POST['enrollment_update'])) {
                 $id = $_POST['id'];
-                $username = $_POST['users_update'];
-                $email = $_POST['email'];
-                $passwd = $_POST['passwd'];
+                $studentId = $_POST['student_id'];
+                $courseId = $_POST['course_id'];
+                $enrollmentDate = $_POST['enrollment_date'];
+                $grade = $_POST['grade'];
                 $edited = 0;
 
-                if ($username != null){
-                    $sql = "UPDATE Users SET Username='$username' WHERE UserID=$id";
+                if ($studentId != null){
+                    $sql = "UPDATE Enrollment SET StudentID='$studentId' WHERE EnrollmentID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
-                if ($email != null){
-                    $sql = "UPDATE Users SET Email='$email' WHERE UserID=$id";
+                if ($courseId != null){
+                    $sql = "UPDATE Enrollment SET CourseID='$courseId' WHERE UserID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
-                if ($passwd != null){
-                    $sql = "UPDATE Users SET Passwd='$passwd' WHERE UserID=$id";
+                if ($enrollmentDate != null){
+                    $sql = "UPDATE Enrollment SET EnrollmentDate='$enrollmentDate' WHERE EnrollmentID=$id";
+                    $conn->query($sql);
+                    $edited = 1;
+                }
+
+                if ($grade != null){
+                    $sql = "UPDATE Enrollment SET Grade='$grade' WHERE EnrollmentID=$id";
                     $conn->query($sql);
                     $edited = 1;
                 }
 
                 if ($edited === 1){
-                    echo "Updated User ID = $id";
+                    echo "Updated Enrollment ID = $id";
                 } else {
                     echo "Error updating entity: " . $conn->error;
                 }
