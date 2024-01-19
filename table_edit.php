@@ -309,7 +309,7 @@
 
                 try {
                     if($conn->query($sql) === TRUE) {
-                        echo "Deleted User";
+                        echo "Deleted Student";
                     } else {
                         echo "Error deleting entity: " . $conn->error;
                     }
@@ -319,14 +319,14 @@
             }
 
             // Delete Course
-            else if(isset($_POST['users_delete'])) {
+            else if(isset($_POST['course_delete'])) {
                 $id = $_POST['id'];
 
-                $sql = "DELETE FROM Users WHERE UsersID = $id";
+                $sql = "DELETE FROM Course WHERE CourseID = $id";
 
                 try {
                     if($conn->query($sql) === TRUE) {
-                        echo "Deleted User";
+                        echo "Deleted Course";
                     } else {
                         echo "Error deleting entity: " . $conn->error;
                     }
@@ -336,14 +336,14 @@
             }
 
             // Delete Instructor
-            else if(isset($_POST['users_delete'])) {
+            else if(isset($_POST['instructor_delete'])) {
                 $id = $_POST['id'];
 
-                $sql = "DELETE FROM Users WHERE UsersID = $id";
+                $sql = "DELETE FROM Instructor WHERE InstructorID = $id";
 
                 try {
                     if($conn->query($sql) === TRUE) {
-                        echo "Deleted User";
+                        echo "Deleted Instructor";
                     } else {
                         echo "Error deleting entity: " . $conn->error;
                     }
@@ -353,14 +353,14 @@
             }
 
             // Delete Enrollment
-            else if(isset($_POST['users_delete'])) {
+            else if(isset($_POST['enrollment_delete'])) {
                 $id = $_POST['id'];
 
-                $sql = "DELETE FROM Users WHERE UsersID = $id";
+                $sql = "DELETE FROM Enrollment WHERE EnrollmentID = $id";
 
                 try {
                     if($conn->query($sql) === TRUE) {
-                        echo "Deleted User";
+                        echo "Deleted Enrollment";
                     } else {
                         echo "Error deleting entity: " . $conn->error;
                     }
