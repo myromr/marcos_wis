@@ -6,7 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>Student Information Systemt</title>
 </head>
-<body>
+<body class="mb-3 mt-3">
     <?php
         $servername = "localhost";
         $username = "root";
